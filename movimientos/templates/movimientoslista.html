@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi test</title>
-</head>
-<body>
-<h1>Test</h1>
-<p>{{miTexto}}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Mi Kakebo - {% endblock %}
+
+{% block contenido %}
+        <h1>Ingresos Mensuales <a href="creaalta">Nuevo movimiento</a></h1>
+
+        <Table>
+                <tr>
+                        <th>Fecha</th>
+                        <th>Concepto</th>
+                        <th>Importe</th>
+
+                </tr>
+        {% for registro in datos %}
+                <tr>
+                        <td>{{ registro [0] }}</td>
+                        <td>{{ registro [1] }}</td>
+                        <td>{{ registro [2] }}€</td>
+                </tr>              
+        {% endfor %}
+
+                <tr>
+                        <td colspan="3">Total: {{ total }}€</td>
+                </tr>
+        </Table>
+{% endblock %}
