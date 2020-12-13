@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Mi Kakebo - {% endblock %}
+
+{% block contenido %}
+<form action="creaalta" method="post">
+
+    <div class="field">
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required>
+    </div>
+
+    <div class="field">
+        <label for="conceto">Concepto:</label>
+        <input type="text" name="concepto" required>
+    </div>
+
+    <div class="field">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" step="0.01" required>
+    </div>
+
+    <div class="field">
+        <input type="submit" value='Crear movimiento'>
+    </div>
+    
+
+    
+
+    
+</form>
+
+{% endblock %}
