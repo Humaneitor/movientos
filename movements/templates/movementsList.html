@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Kakebo {% endblock %}
+
+{% block mi_precioso_bloque_de_formato %}
+    <h1>Movimientos mensuales</h1> 
+    <div class="nuevo"><a href="creaalta">Nuevo</a></div>
+    {% if datos|length > 0 %}
+        <table>
+            <tr>
+                <th class="cabecera">Tipo</th>
+                <th class="cabecera">Fecha</th>
+                <th class="cabecera">Concepto</th>
+                <th class="cabecera">Importe</th>
+                <th class="cabecera">Acciones</th>
+            </tr>
+            <tr>
+                <td class="orden">ordenar por tipo</td>
+                <td class="orden">ordenar por fecha</td>
+                <td class="orden">ordenar por concepto</td>
+                <td class="orden">ordenar por importe</td>
+                <td class="orden"></td>
+
+
+            </tr>
+        {% for registro in datos %}
+            <tr>
+                <td class={{ registro['tipo'] }}>{{ registro['tipo'] }}</td>
+                <td>{{ registro['fecha'] }}</a></td>
+                <td class="concept">{{ registro['concepto'] }}</td>
+                <td>{{ registro['cantidad'] }}€</td>
+                <td><a href="modifica/{{ registro['id'] }}">Editar</a> / <a href="elimina/{{ registro['id'] }}">Borrar</a></td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td class="total" colspan="5">Total: {{total}}€</td>
+            </tr>
+        </table>
+    {% else %}
+        <p>No hay movimientos. crea el tuyo</p>
+        
+    {% endif %}
+    {% endblock %}

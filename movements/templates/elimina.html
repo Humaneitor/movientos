@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Elimina{% endblock %}
+
+{% block mi_precioso_bloque_de_formato %}
+<form action="/elimina/{{id}}" method="post">
+    {{ form.hidden_tag() }}
+            <div class="field">
+        {{ form.fecha.label }}
+        {{ form.fecha(type="date", class="semi") }}
+    </div>
+    <div class="field">
+        {{ form.concepto.label }}
+        {{ form.concepto }}
+    </div>
+    <div class="field">
+        {{ form.cantidad.label }}
+        {{ form.cantidad}}
+    </div>
+    <div class="field">
+        {{ form.submit }}
+    </div>  
+    <div class="warning">
+        <p>Cuidado que la elminación es irrecuperable</p>
+    </div>
+</form>
+
+
+{%  endblock %}

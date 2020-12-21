@@ -1,0 +1,55 @@
+table {
+    width: 100%;
+}
+th, td {
+    width: 20%;
+    text-align: center;
+    border: 3px solid grey;
+
+}
+
+.orden {
+    background-color: orange;
+}
+
+.cabecera {
+    background-color: silver;
+    color: blue;
+    font-size: x-large;
+}
+
+.Ingreso {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+.Gasto {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.concept {
+    font-weight: bold;
+    font-weight: large;
+}
+
+.total {
+    text-align: center;
+    font-weight: 2rem;
+    background-color: grey;
+    font-weight: bold;
+    color: white;
+}
+
+h1 {
+    color: orange;
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    }
